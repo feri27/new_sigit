@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text"
+            style="@style/textlabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@drawable/header_text"
+            android:backgroundTint="@color/red"
+            android:text="PERINGATAN !"
+            android:textAlignment="center"
+            android:textColor="#fff" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="187dp"
+            android:layout_height="96dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            app:srcCompat="@drawable/stop" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:text="MATIKAN MOCK LOCATION \n PADA APLIKASI LOKASI TIRUAN !"
+            android:textAlignment="center"
+            android:textColor="@color/darkBackground" />
+
+        <Button
+            android:id="@+id/dialogButtonOK"
+            style="@style/textlabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:background="@drawable/btn_disable"
+            android:paddingTop="10dp"
+            android:text="OK"
+            android:textAlignment="center"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+</RelativeLayout>

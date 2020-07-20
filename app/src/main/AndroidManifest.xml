@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.very.sigit">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-feature android:name="android.hardware.camera" />
+
+
+    <application
+        android:name="com.example.very.sigit.app.AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon_sigit"
+        android:label="@string/app_icon"
+        android:roundIcon="@mipmap/icon_sigit"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+    <activity android:name="com.example.very.sigit.Download_database">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+        <activity android:name="com.example.very.sigit.Login"></activity>
+        <activity android:name="com.example.very.sigit.inspeksi"></activity>
+        <activity android:name="com.example.very.sigit.menu"></activity>
+        <activity android:name="com.example.very.sigit.setting"></activity>
+        <activity android:name="com.example.very.sigit.FormInspeksi"></activity>
+        <activity android:name="com.example.very.sigit.sync_inspeksi"></activity>
+        <activity android:name="com.example.very.sigit.data_inspeksi"></activity>
+        <activity android:name="com.example.very.sigit.data_equipment"></activity>
+        <activity android:name="com.example.very.sigit.detail_inspeksi"></activity>
+        <activity android:name="com.example.very.sigit.addLocation"></activity>
+        <activity android:name="com.example.very.sigit.data_location"></activity>
+
+
+    </application>
+
+</manifest>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- [ GREEN - 700 ] -->
+    <!-- [ GREEN - 500 ] -->
+    <!-- [ GREEN - 100 ] -->
+    <!-- [ GREEN - 600 ] -->
+
+    <color name="text">#FFFFFF</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+
+    <!--
+    <color name="colorButtonNormal">#19C1B2</color>
+    <color name="colorSwitchThumbNormal">#19C1B2</color>
+    <color name="navigationBarColor">@color/colorPrimaryDark</color>
+    -->
+
+    <color name="lightBackground">#E0E0E0</color>
+    <color name="darkBackground">#424242</color>
+
+
+    <color name="red">#C50404</color>
+    <color name="colorAddrStartPressed">#CC1B5E</color>
+    <color name="colorAddrEnd">#127399</color>
+    <color name="colorAddrEndPressed">#126283</color>
+
+    <color name="tab_disable">#dedcdc</color>
+    <color name="tab_checked">#F3CD70</color>
+
+    <!--color untuk gradient tansition-->
+    <color name="blue_500">#2196f3</color>
+</resources>

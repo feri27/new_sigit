@@ -1,0 +1,87 @@
+package com.example.very.sigit;
+
+import android.content.Intent;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ListView;
+
+
+import com.example.very.sigit.dataEquipment.Equipment;
+import com.example.very.sigit.dataEquipment.EquipmentAdapter;
+
+import java.util.ArrayList;
+
+public class data_equipment extends AppCompatActivity {
+
+    private DatabaseHelper db;
+    private ListView List;
+    String substation_id;
+    protected Cursor cursor;
+    private int counts;
+
+    private java.util.List<Equipment> datas;
+    private EquipmentAdapter inspeksiAdapter;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.data_inspeksi);
+        db = new DatabaseHelper(this);
+        datas = new ArrayList<>();
+
+        List = (ListView) findViewById(R.id.list);
+
+        View view = getLayoutInflater().inflate(R.layout.no_data, null);
+        ViewGroup viewGroup = (ViewGroup) List.getParent();
+        viewGroup.addView(view);
+        List.setEmptyView(view);
+
+        Intent intent = getIntent();
+        substation_id = intent.getStringExtra(Server.SUBSTATION_ID);
+
+
+        ViewGroup header = (ViewGroup)getLayoutInflater().inflate(R.layout.header_equipment,List,false);
+        List.addHeaderView(header);
+
+        View footer = View.inflate(this, R.layout.footer_back, null);
+        List.addFooterView(footer, null, false);
+        Button back = footer.findViewById(R.id.back);
+
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        loadEquipment(substation_id);
+
+    }
+
+
+    private void loadEquipment(String id) {
+        Cursor cursor = db.GET_LOCATION(new Location_cursor(id));
+        if (cursor.moveToFirst()) {
+            do {
+                Equipment data = new Equipment(
+                        cursor.getString(cursor.getColumnIndex(DatabaseHelper.ID_LOCATION)),
+                        cursor.getString(cursor.getColumnIndex(DatabaseHelper.LOCATION_NAME))
+                );
+                datas.add(data);
+            } while (cursor.moveToNext());
+        }
+
+        inspeksiAdapter = new EquipmentAdapter(this, R.layout.data_adapter, datas);
+        List.setAdapter(inspeksiAdapter);
+    }
+
+    private void refreshList() {
+        inspeksiAdapter.notifyDataSetChanged();
+    }
+
+
+}
