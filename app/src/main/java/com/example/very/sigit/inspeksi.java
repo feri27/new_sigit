@@ -61,8 +61,9 @@ public class inspeksi extends AppCompatActivity{
         db.GET_DELETE_DISTANCE();
         db.close();
 
-        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        locationManager.sendExtraCommand(LocationManager.GPS_PROVIDER,"delete_aiding_data", null);
+        //not support in android 9.0
+        //locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        //locationManager.sendExtraCommand(LocationManager.GPS_PROVIDER,"delete_aiding_data", null);
 
        clock =  new CountDownTimer(62000, 1000){
             public void onTick(long millisUntilFinished){

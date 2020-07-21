@@ -69,8 +69,9 @@ public class addLocation extends AppCompatActivity {
 
         loadLocation(substation_id);
 
-        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        locationManager.sendExtraCommand(LocationManager.GPS_PROVIDER,"delete_aiding_data", null);
+        //not support in android 9.0
+        //locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        //locationManager.sendExtraCommand(LocationManager.GPS_PROVIDER,"delete_aiding_data", null);
 
         location_bay.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
